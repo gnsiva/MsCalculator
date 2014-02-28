@@ -1,0 +1,44 @@
+.topregion {
+    color: white;
+    background: blue;
+    text-align:center;
+    margin:0px;
+}
+
+#banner {
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+#bannerlinks {
+    background: black;
+    padding: 2px;
+}
+
+#bannerlinks a {
+    margin-left: 50px;
+    margin-right: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+/* #bannerlinks a:link, #bannerlinks a:visited { */
+/*     color: white; */
+/*     text-decoration: none; */
+/* } */
+
+body {
+    background: #5768a1;
+}
+
+
+
+.main {
+    width: 800px;
+    margin: auto;
+    float: center;
+    background: white;
+    box-shadow: 5px  5px  5px      0px  rgb(50,50,100);
+    padding: 10px;
+ 
+}
