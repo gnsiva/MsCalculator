@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Native mass spectrometry calculator - MS calculations</title>
+    <link rel="stylesheet" type="text/css" href="nmsc.css"/>
+    <script type="text/javascript" src="nativems.js"></script>
+  </head>
+
+  <body>
+
+    <div class="main">
+
+      <img src="banner.png" />
+      <p class="topregion" id="bannerlinks">
+	<a href="index.html">Home</a>
+	<a href="msCalculations.html">MS calculations</a>
+	<a href="concentrationCalculations.html">Concentration calculations</a>
+      </p>
+
+
+      <p>
+	<h3>Calculate m/z value from mass and charge</h3>
+	<table border="1" id="mz()">
+	  <tr>
+	    <td>Mass</td>
+	    <td><input type="text" id="mz()/mass" name="mass"/></td>
+	  </tr>
+	  <tr>
+	    <td>Charge</td>
+	    <td><input type="text" name="charge" id="mz()/charge"/></td>
+	  </tr>
+	  <tr>
+	    <td><input type="submit" value="Calculate" onClick="calculateMz();"/></td>
+	    <td></td>
+	  </tr>
+	</table>
+      </p>
+
+      <hr />
+
+      <p>
+	<h3>Calculate mass from m/z value and charge</h3>
+	<table border="1" id="mass()">
+	  <tr>
+	    <td>m/z</td>
+	    <td><input type="text" name="mass" id="mass()/mz"/></td>
+	  </tr>
+	  <tr>
+	    <td>Charge</td>
+	    <td><input type="text" name="charge" id="mass()/charge"/></td>
+	  </tr>
+	  <tr>
+	    <td><input type="submit" value="Calculate" onClick="calculateMass();"/></td>
+	    <td></td>
+	  </tr>
+	</table>
+      </p>
+
+      <hr />
+
+
+      <p>
+	<h3>Still to come</h3>
+	<ul>
+	  <li>Calculate mass from peak m/z values</li>
+	  <li>Create a table of the potential charge states (as m/z) for a protein and ligand</li>
+	</ul>
+      </p>
+
+
+      <!-- <p> -->
+      <!-- 	<h3>Calculate mass from peak m/z values</h3> -->
+      <!-- 	<textarea rows="4" cols="30"></textarea> -->
+      <!-- </p> -->
+
+
+    </div>
+  </body>
+</html>

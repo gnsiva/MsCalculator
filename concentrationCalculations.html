@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+  <title>Native mass spectrometry calculator - Concentration calculations</title>
+  <link rel="stylesheet" type="text/css" href="nmsc.css"/>
+  <script type="text/javascript" src="concentrations.js"></script>
+</head>
+
+<body>
+
+  <div class="main">
+
+    <img src="banner.png" />
+    <p class="topregion" id="bannerlinks">
+      <a href="index.html">Home</a>
+      <a href="msCalculations.html">MS calculations</a>
+      <a href="concentrationCalculations.html">Concentration calculations</a>
+    </p>
+
+    <p>
+      <h3>Instructions</h3>
+      <p class="writing">These calculators can calculate the value for any of the fields. For example, 
+	using the "Converting molarity, concentration (mg/ml) & molecular mass" function
+	you can calculate the molarity, mg/ml concentration or molecular mass by entering 
+	the two known values and leaving the other blank.
+      </p>
+    </p>
+
+    <hr />
+
+    <p>
+      <h3>Converting molarity, concentration (mg/ml) & molecular mass</h3>
+      <table>
+	<tr>
+	  <td>Molarity</td>
+	  <td><input type="text" id="molarity1"/></td>
+	  <td>
+	    <select id="select1">
+	      <option>uM</option>
+	      <option>mM</option>
+	      <option>M</option>
+	    </select>
+	  </td>
+	</tr>
+	<tr>
+	  <td>Concentration (mg/ml)</td>
+	  <td><input type="text" id="mgml1"/></td>
+	</tr>
+	<tr>
+	  <td>Molecular mass (Da)</td>
+	  <td><input type="text" id="mm1" /></td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td id="alignright"><input type="submit" value="Calculate" onClick="calculate1();" /></td>
+	</tr>
+      </table>
+    </p>
+
+    <hr />
+
+    <p>
+      <h3>Converting concentration (mg/ml), mass & volume</h3>
+      <table>
+	<tr>
+	  <td>Concentration (mg/ml)</td>
+	  <td><input type="text" id="mgml2" /></td>
+	</tr>
+	<tr>
+	  <td>Mass</td>
+	  <td><input type="text" id="mass2" /></td>
+	  <td>
+	    <select id="select2a">
+	      <option>mg</option>
+	      <option>g</option>
+	      <option>ug</option>
+	    </select>
+	  </td>
+	</tr>
+	<tr>
+	  <td>Volume</td>
+	  <td><input type="text" id="volume2" /></td>
+	  <td>
+	    <select id="select2b">
+	      <option>mL</option>
+	      <option>uL</option>
+	      <option>L</option>
+	    </select>
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td id="alignright"><input type="submit" onClick="calculate2();" /></td>
+	</tr>
+      </table>
+    </p>
+
+    <hr />
+
+    <p>
+      <h3>Converting molarity, mass, molecular mass & volume</h3>
+      <table>
+	<tr>
+	  <td>Molarity</td>
+	  <td><input type="text" id="molarity3" /></td>
+	  <td>
+	    <select id="select3a">
+	      <option>uM</option>
+	      <option>mM</option>
+	      <option>M</option>
+	    </select>
+	  </td>	</tr>
+	<tr>
+	  <td>Mass</td>
+	  <td><input type="text" id="mass3" /></td>
+	  <td>
+	    <select id="select3b">
+	      <option>mg</option>
+	      <option>ug</option>
+	      <option>g</option>
+	    </select>
+	  </td>
+	</tr>
+	<tr>
+	  <td>Molecular mass (Da)</td>
+	  <td><input type="text" id="mm3" /></td>
+	</tr>
+	<tr>
+	  <td>Volume</td>
+	  <td><input type="text" id="volume3" /></td>
+	  <td>
+	    <select id="select3c">
+	      <option>mL</option>
+	      <option>uL</option>
+	      <option>L</option>
+	    </select>
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td id="alignright"><input type="submit" value="Calculate" onClick="calculate3();" /></td>
+	</tr>
+      </table>
+    </p>
+
+    <hr />
+    <p>
+      <h3>Still to come</h3>
+      <ul>
+	<li>Dilutions calculator</li>
+      </ul>
+    </p>
+
+  </div>
+
+</body>

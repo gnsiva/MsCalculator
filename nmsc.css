@@ -3,6 +3,7 @@
     background: blue;
     text-align:center;
     margin:0px;
+    margin-bottom: 20px;
 }
 
 #banner {
@@ -29,9 +30,8 @@
 
 body {
     background: #5768a1;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
-
-
 
 .main {
     width: 800px;
@@ -40,5 +40,46 @@ body {
     background: white;
     box-shadow: 5px  5px  5px      0px  rgb(50,50,100);
     padding: 10px;
- 
+}
+.main img {
+    max-width: 100%;
+}
+
+h3 {
+    color: rgb(50,50,100);
+}
+
+table {
+    margin: auto;
+    border: none;
+}
+td {
+    min-width: 100px;
+    border: none;
+}
+
+hr {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgba(50,50,100,0.3);
+}
+
+#alignright {
+    text-align: right;
+}
+
+#publications {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#stilltocome li {
+    margin: 0px;
+}
+
+.writing {
+    margin-left: 30px;
+    margin-right: 30px;    
 }
