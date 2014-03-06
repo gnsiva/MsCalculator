@@ -4,35 +4,69 @@
 function calculateMz(){
     
     // Get the values for calculation
-    var mass = parseFloat(document.getElementById('mz()/mass').value);
-    var charge = parseFloat(document.getElementById('mz()/charge').value);
+    var mass = document.getElementById('mz()/mass').value;
+    var charge = document.getElementById('mz()/charge').value;
+    
+    // Decimal points for answer
+    var dps = 2;
+
+    // Check all fields have been filled in
+    if (mass == "" || charge == ""){
+	alert("Fill in the fields first");
+	return -1;
+    }
+
+    // Check entries are numbers and convert to float
+    var check = checkEntriesAreNumbers(Array(mass,charge),-1);
+    if (check < 0){
+	return -1;
+    }
+    mass = parseFloat(mass);
+    charge = parseFloat(charge);
 
     // Calculate mz
     var mz = getMz(mass,charge);
-    // round number
-    mz = Math.round(mz*100)/100;
+    // round number & create output message for HTML
+    var message = "m/z = "+gishRound(mz,dps)+" Th";
 
     // Write value to HTML
     var myTable = document.getElementById('mz()');
-    myTable.rows[2].cells[1].innerHTML = "m/z = "+mz+" Th";
+    myTable.rows[2].cells[1].innerHTML = message;
 }
-
 
 
 function calculateMass(){
     
     // Get the values for calculation
-    var mz = parseFloat(document.getElementById('mass()/mz').value);
-    var charge = parseFloat(document.getElementById('mass()/charge').value);
+    var mz = document.getElementById('mass()/mz').value;
+    var charge = document.getElementById('mass()/charge').value;
 
-    // Calculate mz
+    // Decimal points for answer
+    var dps = 2;
+
+    // Check all fields have been filled in
+    if (mz == "" || charge == ""){
+	alert("Fill in the fields first");
+	return -1;
+    }
+
+    // Check entries are numbers and convert to float
+    var check = checkEntriesAreNumbers(Array(mz,charge),-1);
+    if (check < 0){
+	return -1;
+    }
+    mz = parseFloat(mz);
+    charge = parseFloat(charge);
+
+    // Calculate mass
     var mass = getMass(mz,charge);
-    // round number
-    mass = Math.round(mass*100)/100;
+
+    // round number & create output message for HTML
+    var message = "Mass = "+gishRound(mass,dps)+" Da";
 
     // Write value to HTML
     var myTable = document.getElementById('mass()');
-    myTable.rows[2].cells[1].innerHTML = "Mass = "+mass+" Da";
+    myTable.rows[2].cells[1].innerHTML = message;
 }
 
 
@@ -77,7 +111,7 @@ function calcMass(mzs){
 	errors.push(error);
     }
     var lowestErrorI = Math.min.apply(Math, errors);
-    console.log(lowestErrorI);
+    //console.log(lowestErrorI);
 }
 
 calcMass(Array(3500,3800,4100));
@@ -153,8 +187,6 @@ function concentrationToMolarity(concentration,molecularMass,molarity,molarityTy
     return concentration,molecularMass,molarity;
 }
 
-
-
 function diluteSolids(volume,mass,concentration,volumeType){
     // Only for converting mg/ml at the moment, add molarity later
     // Pretty bait calculation... probably should add the molarity calculation soon
@@ -189,72 +221,38 @@ function diluteSolids(volume,mass,concentration,volumeType){
 // ================================================================
 // Sub functions
 
-function checkOneIsEmpty(a){
-    // pass an array
-    // function checks that one of the values is ""
-    // returns the index of that value
-    // error code -1: no values are "" (empty)
-    // error code -2: more than one value is empty
-    
-    var unknown = -1; // no slots are empty
-    var nEmpties = 0;
-    
+// TODO - put these two functions in a separate js file and import into here
+
+function gishRound(number,dps){
+    // Standard rounding function, python style
+    // TODO - if number is less than 0.00 in dps=2, then show first significant figure
+    if (dps > 0){
+	var decimal = 10;
+	for (i=1; i<dps; i++){
+	    decimal *= 10;
+	}
+	return Math.round(number*decimal)/decimal;
+    }
+    else {
+	return Math.round(number);
+    }
+}
+
+function checkEntriesAreNumbers(a,unknown){
+    // Pass an array, and the index of the field which is supposed to be blank
+    // returns 0 if everything is fine
+    // returns -1 if one or more of the entries are not numbers
     for (i=0; i<a.length; i++){
-        if (a[i] == ""){
-            unknown = i;
-            nEmpties += 1;
-        }
+	if (i != unknown){
+	    if (isNaN(a[i])){
+		alert("Only enter numbers");
+		return -1;
+	    }
+	}
     }
-    if (nEmpties > 1){
-        return -2; // more than one empty slot
-    }
-    else {
-        return unknown
-    }
+    return 0;
 }
 
-function molarityToMgml(concentration,molecularMass,molarityType){
-    // Convert molarity (as uM, mM or M) to mg/ml
-    // TODO - need to do all the parts of concentrationToMolarity() like this (so they can be used in other functions)
-    multiplier = getMolarityMultiplier(molarityType);
-    return molecularMass * (molarity/multiplier);
-}
-
-function getMolarityMultiplier(molarityType){
-    // Get the proportion of molar (M) for the units
-    // Correct inputs are "M", "mM" and "uM".
-    if (molarityType == "uM"){
-        return 1/1000000.;
-    }
-    else if (molarityType == "mM"){
-        return 1/1000.;
-    }
-    else if (molarityType == "M"){
-        return 1.;
-    }
-    else {
-        console.log("Unknown molarity type sent to getMolarityMultiplier()");
-        return -1;
-    }
-}
-
-function getVolumeMultiplier(volumeType){
-    // Get the proportion of mL (mL) for the units
-    // Correct inputs are "L", "mL" and "uL". 
-    if (molarityType == "uL"){
-        return 1/1000.;
-    }
-    else if (molarityType == "mL"){
-        return 1.;
-    }
-    else if (molarityType == "L"){
-        return 1000.;
-    }
-    else {
-        console.log("Unknown volume type sent to getVolumeMultiplier()");
-        return -1;
-    }    
-}
 
 // ================================================================
 // Tests

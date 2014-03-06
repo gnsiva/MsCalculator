@@ -1,0 +1,16 @@
+* To do list
+** TODO Figure out how to use forms
++ Pressing enter submits the data which is great
++ But it reloads the page, so the information is removed (inputs and answer)
+** TODO Drawing graphs with javascript
+* Features to add
+** MS calculations
+*** TODO Calculate masses from peak m/z values
+*** TODO Table of m/z values for theoretical charge states
+*** TODO Draw spectrum, with theoretical m/z values drawn on
+** Concentration calculations
+*** TODO c1v1=c2v2 dilutions
+* Bugs
+** DONE Fonts don't work properly in chrome (firefox is fine)
+** TODO Move down writing in logo a bit, reduce the vertical stretch a little as well
+** DONE Middle concentration calculation - button says "Submit Query" instead of "Calculate"

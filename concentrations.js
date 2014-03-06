@@ -168,9 +168,9 @@ function checkEntriesAreNumbers(a,unknown){
     // Pass an array, and the index of the field which is supposed to be blank
     // returns 0 if everything is fine
     // returns -1 if one or more of the entries are not numbers
-    for (i=0; i<i.length; i++){
+    for (i=0; i<a.length; i++){
 	if (i != unknown){
-	    if (isNan(a[i])){
+	    if (isNaN(a[i])){
 		alert("Only enter numbers");
 		return -1;
 	    }
