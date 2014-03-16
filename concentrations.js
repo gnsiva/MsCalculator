@@ -332,6 +332,43 @@ function mmFromMgmlM(mgml,M,molarityType){
 // Answer should be: 45454.545454545456
 
 // ================================================================
+// Dilutions
+function dilutions(){
+
+    var c1 = document.getElementById('c1').value;
+    var v1 = document.getElementById('v1').value;
+    var c2 = document.getElementById('c2').value;
+    var v2 = document.getElementById('v2').value;
+
+    var data = new Array(c1,v1,c2,v2);
+    var dps = 2;
+    
+    // Check that there is 1 empty value to calculate
+    var unknown = checkData(data);
+    if (unknown < 0){
+	return unknown;
+    }
+    
+    data = convertToFloats(data,unknown);
+    c1 = data[0];
+    v1 = data[1];
+    c2 = data[2];
+    v2 = data[3];
+
+
+    switch (unknown){
+	case 0:
+	document.getElementById('c1').value = gishRound((c2*v2)/v1,dps);
+	case 1:
+	document.getElementById('v1').value = gishRound((c2*v2)/c1,dps);
+	case 2:
+	document.getElementById('c2').value = gishRound((c1*v1)/v2,dps);
+	case 3:
+	document.getElementById('v2').value = gishRound((c1*v1)/c2,dps);
+    }
+}
+
+// ================================================================
 // Support Functions
 function getMolarityMultiplier(molarityType){
     // Get the proportion of molar (M) for the units

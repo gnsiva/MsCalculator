@@ -14,3 +14,8 @@
 ** DONE Fonts don't work properly in chrome (firefox is fine)
 ** TODO Move down writing in logo a bit, reduce the vertical stretch a little as well
 ** DONE Middle concentration calculation - button says "Submit Query" instead of "Calculate"
+* Scratch
+** <2014-03-10 Mon> Graphs
+*** TODO Test regex result before appending
+*** TODO Test arrays survive outside of the function
+*** TODO Test if you can get rid of the second instantiation of FileReader()

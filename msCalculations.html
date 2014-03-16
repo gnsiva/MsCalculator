@@ -5,6 +5,7 @@
     <title>Native mass spectrometry calculator - MS calculations</title>
     <link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="nmsc.css"/>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
     <script type="text/javascript" src="nativems.js"></script>
   </head>
 
@@ -71,10 +72,15 @@
       </p>
 
 
-      <!-- <p> -->
-      <!-- 	<h3>Calculate mass from peak m/z values</h3> -->
-      <!-- 	<textarea rows="4" cols="30"></textarea> -->
-      <!-- </p> -->
+      <p>
+      	<h3>Calculate mass from peak m/z values</h3>
+      	<!-- <textarea rows="4" cols="30"></textarea> -->
+	<!-- //<input type="submit" value="Draw" onClick="drawGraph();"/> -->
+	<!-- <input type="file" onChange="readText(this);"/> -->
+	<input type="file" onChange="getSpectrumList(this);"/>
+
+	<p id="spectrum"></p>
+      </p>
 
 
     </div>

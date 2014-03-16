@@ -114,109 +114,69 @@ function calcMass(mzs){
     //console.log(lowestErrorI);
 }
 
-calcMass(Array(3500,3800,4100));
+//calcMass(Array(3500,3800,4100));
 
-// ================================================================
-// Concentration calculations
+function CalcMass(maxCharge,mzs){
+    this.mzs = mzs.sort(function(a,b){return parseFloat(b)-parseFloat(a)});
+    this.maxCharge = maxCharge;
+    this.result;
 
-function c1v1c2v2(c1,v1,c2,v2){
-    // Calculates dilutions using the c1.v1 = c2.v2 equation
-    // Leave the value to be calculated as ""
-    var vals = new Array(c1,v1,c2,v2);
-    
-    var unknown = -1;
-    
-    for (i=0; i<4; i++){
-        if (vals[i] == ""){
-            unknown = i;
-        }
+    this.calculateRootChargeState = calculateRootChargeState;
+    this.calculateRootChargeState();
+}
+function calculateRootChargeState(){
+
+    var rcs = new RootChargeState(1,this.mzs);
+    var minError = rcs.error;
+    var minErrorZ = 1;
+
+    for (rootZ=2; rootZ<=this.maxCharge;rootZ++){
+	rcs = new RootChargeState(rootZ,this.mzs);
+	if (rcs.error < minError){
+	    minError = rcs.error;
+	    minErrorZ = rootZ;
+	}
     }
-    // If there are no empty values to calculate
-    // then return the error code -1
-    if (unknown == -1){
-        return -1;
-    }
-    
-    switch(unknown){
-    case 0:
-        return vals[2] * vals[3] / vals[1];
-    case 1:
-        return vals[2] * vals[3] / vals[0];
-    case 2:
-        return vals[0] * vals[1] / vals[3];
-    case 3:
-        return vals[0] * vals[1] / vals[2];
-    }
+    this.result = new RootChargeState(minErrorZ,this.mzs);
 }
 
 
-function concentrationToMolarity(concentration,molecularMass,molarity,molarityType){
-    // Leave the value to be calculated as "", any of the first 3 can be calculated
-    // Give concentration as mg/ml, molecularMass as daltons.
-    // Molarity units is whatever is given in molarityType
-    // Molarity type can be "uM", "mM" and "M" (from dropdown so doesn't need checks)
-    
-    // ================================================================
-    // Check other input parameters
-    
-    var vals = new Array(concentration,molecularMass,molarity);
-    var unknown = checkOneIsEmpty(vals);
-    
-    // No values are blank
-    if (unknown == -1){
-        return -1;
+function RootChargeState(rootCharge,mzs){
+    this.mzs = mzs;
+    this.rootCharge = rootCharge;
+
+    this.charges = new Array();
+    this.masses = new Array();
+    this.mass;
+    this.errors = new Array();
+    this.error;
+    this.calculate = calculate;
+    this.calculate();
+}
+function calculate(){
+    // Calculate masses
+    for (i=0; i<this.mzs.length; i++){
+	mass = getMass(mzs[i],this.rootCharge+i);
+	this.masses.push(mass);
+	this.charges.push(this.rootCharge+i);
     }
-    // More than one value is blank
-    else if (unknown == -2){
-        return -2;
+    // Calculate average mass
+    var sumOfMasses = this.masses.reduce(function(a,b) {return parseFloat(a)+parseFloat(b)});
+    this.mass = sumOfMasses/this.masses.length;
+    // Calculate errors
+    for (i=0; i<this.masses.length; i++){
+	this.errors.push(Math.abs(this.masses[i] - this.mass));
     }
-    
-    // ================================================================
-    // Calculate result
-    
-    multiplier = getMolarityMultiplier(molarityType);
-    
-    switch (unknown){
-    case 0:
-        concentration = molecularMass*(molarity*multiplier);
-    case 1:
-        molecularMass = concentration/(molarity/multiplier);
-    case 2:
-        molarity = concentration/molecularMass/multiplier;
-    }
-    return concentration,molecularMass,molarity;
+    // Calculate average error
+    var sumOfErrors = this.errors.reduce(function(a,b) {return parseFloat(a)+parseFloat(b)});
+    this.error = sumOfErrors/this.errors.length;
 }
 
-function diluteSolids(volume,mass,concentration,volumeType){
-    // Only for converting mg/ml at the moment, add molarity later
-    // Pretty bait calculation... probably should add the molarity calculation soon
-    
-    // ================================================================
-    // Check input parameters
-    var unknown = checkOneIsEmpty(Array(volume,mass,concentration));
-    // No values are blank
-    if (unknown == -1){
-        return -1;
-    }
-    // More than one value is blank
-    else if (unknown == -2){
-        return -2;
-    }
-    
-    // ================================================================
-    // Deal with volume units
-    var multiplier = getVolumeMultiplier(volumeType);
-    
-    // Calculate result
-    switch (unknown){
-    case 0:
-        volume = mass/concentration/multiplier;
-    case 1:
-        mass = volume*concentration*multiplier;
-    case 2:
-        concentration = mass/volume/multiplier;
-    }
-}
+var mzs = new Array(3510.99,3290.65,3749.48);
+var maxCharge = 100;
+
+var calcMass = new CalcMass(maxCharge,mzs);
+console.log(calcMass.result.mass, calcMass.result.rootCharge, calcMass.result.error);
 
 // ================================================================
 // Sub functions
@@ -254,31 +214,114 @@ function checkEntriesAreNumbers(a,unknown){
 }
 
 
-// ================================================================
-// Tests
 
-// function testFunction(functionName,valJs,valPy,precision){
-//     if (valJs > valPy-precision && valJs < valPy+precision){
-// 	console.log(functionName+" functioning correctly");
-//     }
-//     else {
-// 	console.log(functionName+" malfunctioning returning "+mz+" should be returning "+mzPy+". Difference is "+(mzPy-mz));
-//     }    
-// }
+function getSpectrumList(fileIn){
+    var regex = new RegExp("([0-9.\\-e]+).([0-9.\\-e]+)");
+    var result = new Array();
 
-// // getMz()
-// var mz = getMz(45550,13);
-// var mzPy = 3503.9236923;
-// testFunction("getMz()",mz,mzPy,0.01);
+    if (fileIn.files && fileIn.files[0]){
+	var reader = new FileReader();
+	reader.onload = function (e){
+	    var xvals = new Array();
+	    var yvals = new Array();
+	    var output = e.target.result;
+	    
+	    output = output.split("\n");
+	    for (i=0; i<output.length; i++){
+	    	result = regex.exec(output[i]);
+		if (!isNaN(result[1]) && !isNaN(result[2])){
+		    x = parseFloat(result[1]);
+		    y = parseFloat(result[2]);
+		    xvals.push(parseFloat(result[1]));
+		    yvals.push(parseFloat(result[2]));
+		    plotMassSpectrum(xvals,yvals);
+		}
+	    }
+	};
+	reader.readAsText(fileIn.files[0]);
+    }
+}
 
-// // getMass()
-// var mass = getMass(3510,13);
-// var massPy = 45631.008;
-// testFunction("getMass()",mass,massPy,0.01);
+function plotMassSpectrum(xvals,yvals){
+    var data = new Array();
+    for (i=0; i<xvals.length; i++){
+	data.push({x: xvals[i], y: yvals[i]});
+    }
+    var chart = new CanvasJS.Chart("spectrum",{
+	data: [
+	    {
+		type: "line",
+		dataPoints: data
+	    }
+	]
+    });
+    chart.render();
+    // {
+    // 	title:{
+    // 	    text: "Share Value over a Year"   
+    // 	},
+    // 	theme: "theme2",
+    // 	axisX: {
+    // 	    valueFormatString: "MMM"      
+    // 	},
+    // 	axisY:{
+    //         valueFormatString: "#0$"
+    // 	},
+    // 	data: [
+    // 	    {        
+    // 		type: "line",
+    // 		showInLegend: true,
+    // 		legendText: "ABC Share",
+    // 		dataPoints: [        
+    // 		    { x: new Date(2012, 01, 1), y: 71, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23", markerSize: 12},
+    // 		    { x: new Date(2012, 02, 1) , y: 55, indexLabel: "loss", markerType: "cross", markerColor: "tomato" , markerSize: 12  },
+    // 		    { x: new Date(2012, 03, 1) , y: 50, indexLabel: "loss", markerType: "cross", markerColor: "tomato" , markerSize: 12 },
+    // 		    { x: new Date(2012, 04, 1) , y: 65, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23", markerSize: 12 },
+    // 		    { x: new Date(2012, 05, 1) , y: 85, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23", markerSize: 12 },
+    // 		    { x: new Date(2012, 06, 1) , y: 68, indexLabel: "loss", markerType: "cross", markerColor: "tomato" , markerSize: 12 },
+    // 		    { x: new Date(2012, 07, 1) , y: 28, indexLabel: "loss", markerType: "cross", markerColor: "tomato" , markerSize: 12 },
+    // 		    { x: new Date(2012, 08, 1) , y: 34, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23", markerSize: 12 },
+    // 		    { x: new Date(2012, 09, 1) , y: 24, indexLabel: "loss", markerType: "cross", markerColor: "tomato" , markerSize: 12 }
+    // 		]
+    // 	    }
+    // 	]    
+    // }
+}
+
+function readText(that){
+    var reader = new FileReader();
+    // var regex = /([0-9.]+)\b+([0-9.]+)/;
+    // var result;
+
+    var regex = new RegExp("([0-9.\\-e]+).([0-9.\\-e]+)");
+    var result;
+    var x;
+    var y;
+
+    if(that.files && that.files[0]){
+	var reader = new FileReader();
+	reader.onload = function (e) {  
+	    var output=e.target.result;
+	    
+	    //process text to show only lines with "@":				
+	    //output=output.split("\n").filter(/./.test, /\@/).join("\n");
+	    output = output.split("\n");
+	    for (i=0; i<output.length; i++){
+	    	result = regex.exec(output[i]);
+		x = parseFloat(result[1]);
+		y = parseFloat(result[2]);
+	    	// document.write(result[1]+" "+result[2], "<br />");
+	    	document.write(x+" "+y, "<br />");
+	    }
+
+	    document.getElementById('spectrum').innerHTML = output;
+	    // for (i=0; i<output.length; i++){
+	    // 	document.write(output[i]);
+	    // }
+	};//end onload()
+	reader.readAsText(that.files[0]);
+    }//end if html5 filelist support
+} 
 
 
-
-// c1v1c2v2
-// var answer = c1v1c2v2("3","22","","879");
-// console.log(answer);
 -->
