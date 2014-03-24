@@ -5,7 +5,9 @@
     <title>Native mass spectrometry calculator - MS calculations</title>
     <link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="nmsc.css"/>
-    <script type="text/javascript" src="canvasjs.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="Data.js"></script>
+    <script type="text/javascript" src="PlottingLineGraph.js"></script>
     <script type="text/javascript" src="nativems.js"></script>
   </head>
 
@@ -61,27 +63,140 @@
 
       <hr />
 
+      <p>
+      	<h3>Calculate mass from peak m/z values</h3>
+	<div id="calcMassDiv">
+	  <div id="calcMassDivLeft">
+      	    <textarea rows="6" cols="30" id="mzs"></textarea>
+	    <br />
+	    <input type="submit" value="Calculate" onClick="calcMassFromMzs();"/>
+	  </div>
+
+	  <div id="calcMassDivRight">
+	    <table border="1" id="calcMassFromMzsTable">
+	      <tr>
+		<td>Mass:</td>
+		<td></td>
+	      </tr>
+	      <tr>
+		<td>Average error:</td>
+		<td></td>
+	      </tr>
+	    </table>
+	  </div>
+	</div>
+      </p>
+      
+      <hr />
+
+
+      <p>
+      	<h3>Calculate theoretical charge states</h3>
+	<input type="file" onChange="getSpectrumList(this);"/>
+	<table>
+	  <tr>
+	    <td></td>
+	    <td>Mass</td>
+	    <td>Min Charge</td>
+	    <td>Max Charge</td>
+	    <td>n</td>
+	  </tr>
+	  <tr>
+	    <td>Monomer</td>
+	    <td><input type="text" id="monomerMass"/></td>
+	    <td>
+	      <select id="monomerMinZ">
+		<option>1</option>
+		<option>5</option>
+		<option>10</option>
+		<option>15</option>
+	      </select>
+	    </td>
+	    <td>
+	      <select id="monomerMaxZ">
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+	      </select>
+	    </td>
+	    <td>
+	      <select id="monomerOligo">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+		<option>9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>Ligand</td>
+	    <td><input type="text" id="ligandMass"/></td>
+	    <td>
+	      <select id="ligandMinZ">
+		<option>1</option>
+		<option>5</option>
+		<option>10</option>
+		<option>15</option>
+	      </select>
+	    </td>
+	    <td>
+	      <select id="ligandMaxZ">
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+	      </select>
+	    </td>
+	    <td>
+	      <select id="nLigands">
+		<option>0</option>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+		<option>9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td><input type="Submit" value="Update graph" onClick="plotCharges();"/></td>
+	    <td><input type="Submit" value="Create table" onClick="mzsTable();"></td>
+	  </tr>
+	</table>
+        <canvas id="spectrum" width="700" height="300"></canvas>
+      </p>
+	
+	<hr />
 
       <p>
 	<h3>Still to come</h3>
 	<ul>
-	  <li>Calculate mass from peak m/z values</li>
-	  <li>Create a table of the potential charge states (as m/z) for a protein and ligand</li>
-	  <li>After pasting in a spectrum list, the webpage will draw a graph and show theoretical charge states given masses.</li>
+	  <li>Nothing at the moment.</li>
+	  <li><i><a href="https://groups.google.com/d/forum/mass-spec-calculator">Submit your suggestions to the Google Group!</a></i></li>
 	</ul>
       </p>
-
-
-      <p>
-      	<h3>Calculate mass from peak m/z values</h3>
-      	<!-- <textarea rows="4" cols="30"></textarea> -->
-	<!-- //<input type="submit" value="Draw" onClick="drawGraph();"/> -->
-	<!-- <input type="file" onChange="readText(this);"/> -->
-	<input type="file" onChange="getSpectrumList(this);"/>
-
-	<p id="spectrum"></p>
-      </p>
-
 
     </div>
   </body>
