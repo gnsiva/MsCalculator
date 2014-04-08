@@ -330,7 +330,13 @@ function mzsTable(){
 	// Get charges and draw lines
 	var minZ = getIntFromSelect("ligandMinZ");
 	var maxZ = getIntFromSelect("ligandMaxZ");
-	newWindow.document.write("<tr> <td>Charge</td> <td>Apo (<i>m/z</i>)</td> <td>"+nLigands+" Ligands (<i>m/z</i>)</td> </tr>");
+	if (nLigands == 1){
+	    var ligand_s = " Ligand";
+	}
+	else {
+	    var ligand_s = " Ligands";
+	}
+	newWindow.document.write("<tr> <td>Charge</td> <td>Apo (<i>m/z</i>)</td> <td>"+nLigands+ligand_s+" (<i>m/z</i>)</td> </tr>");
 	for (z=minZ; z<=maxZ; z++){
 	    var mzApo = gishRound(getMz(mass,z),2);
 	    var mzHolo = gishRound(getMz(mass+ligandMass*nLigands,z));
