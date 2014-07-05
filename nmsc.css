@@ -18,8 +18,8 @@
 }
 
 #bannerlinks a {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
     color: white;
     text-decoration: none;
 }
@@ -51,6 +51,19 @@ body {
 h3 {
     color: rgb(50,50,100);
 }
+h3 a:link {
+    color: rgb(50,50,100);
+}
+h3 a:visited {
+    color: rgb(50,50,100);
+}
+h3 a:hover {
+    color: red;
+}
+h3 a:active {
+    color: orange;
+}
+
 
 table {
     margin: auto;

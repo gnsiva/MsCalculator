@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+  <title>Native mass spectrometry calculator</title>
+  <link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="nmsc.css"/>
+    <script type="text/javascript" src="general.js"></script>
+  </head>
+
+  <body>
+
+    <div class="main">
+
+      <img src="banner.png" />
+      <p class="topregion" id="bannerlinks">
+	<a href="index.html" style="color: #8ca7ff">Home</a>
+	<a href="msCalculations.html" style="color: #8ca7ff;">MS calculations</a>
+	<a href="concentrationCalculations.html" style="color: #8ca7ff;">Concentration calculations</a>
+	<a href="amphitrite.html">Amphitrite</a>
+      </p>
+
+
+      <h3>Amphitrite:</h3>
+      <p class="writing">Amphitrite is a software package for processing native and ion mobility mass spectrometry data. Mass spectrum deconvolution can be performed (using AtroposGui.exe) using text files and so is compatible with all mass spectrometers. The ion mobility functionality however is currently only works with Synapt G1 data, but we hope to extend this to G2(s) data shortly.</p>
+      <p class="writing">You can download the program and some sample data from the following links and please be sure to read the README.txt file:</p>
+      <p class="writing"><a href="http://anake.no-ip.org/140404_Amphitrite.zip">Amphitrite program (Windows 64 bit)</a></p>
+      <p class="writing"><a href="http://anake.no-ip.org/140121_Data.zip">Example data</a></p>
+
+      <p class="writing">The source code for the software package is available as a GitHub repository as well. Linux and Mac users can run the program using that, though we hope to have binaries available soon.</p>
+      <p class="writing"><a href="https://github.com/gnsiva/Amphitrite">GitHub page</a></p>
+      
+      <p class="writing">If you find any bugs or have any problems please let us know on the Google Group:</p>
+      <p class="writing"><a href="https://groups.google.com/forum/#!forum/amphitrite-im-ms">Amphitrite Google Group</a><p>
+      <p class="writing">We will hopefully be putting video tutorials up soon, so check back here or the Google Group to keep updated.</p>
+
+
+      <h4>Setup on Windows: <a id="displayText" href="javascript:hideshow('displayText','toggleText');">show</a></h4>
+      <div id="toggleText" style="display: none">
+	<p>Windows binaries are available from mscalculator.com. They were compiled in Windows 7 64 bit, Windows 8 64 bit has also been tested and works fine.
+	</p>
+	<p>
+	  Spectrum deconvolution can be run on spectrum list text files using AtroposGui.exe:
+	</p><ul>
+	  <li>The copy spectrum list button in Mass Lynx works for this on the G1 and G2.
+	  </li>
+	  <li>For other instrumentation, please put a pair of coordinates per line as so:
+	    <ul>
+	      <li>mz I
+		<ul>
+		  <li>mz is mass to charge ratio
+		  </li>
+		  <li>I is intensity
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </li>
+	</ul>
+	<p>
+	  To run ImProcessor.exe which converts Synapt G1 data into Amphitrite data files:
+	</p><ul>
+	  <li>You need to install cygwin (32 bit only), and make sure the cygwin bin directory (C:\cygwin\bin usually) is in your path.
+	  </li>
+	  <li>You need to put cdt.dll into the Amphitrite folder (alongside the ImProcessor.exe file)
+	    <ul>
+	      <li>This is distributed with Waters Driftscope v2.1, and currently will not work with versions of the file shipped with the Synapt G2 and newer.
+	      </li>
+	      <li>If you are unsure about which version you have, the correct one is ~64 kb, where newer versions are larger (~74 kb)
+	      </li>
+	      <li>The default file location is C:\Driftscope\lib\cdt.ll
+	      </li>
+	    </ul>
+
+	  </li>
+	</ul>
+	<p>
+	  <b>Do not move the exe files out of the Amphitrite folder or they will stop working</b>
+	</p>
+      </div>
+
+  </div>
+
+</body>

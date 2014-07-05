@@ -1,10 +1,32 @@
 * Updated version with amphitrite subdomain/part
-** TODO branch the git repo
-** TODO redo the home page
-*** TODO Add links to each section and calculation
-*** TODO Write descriptions of what each page is up to
+** DONE branch the git repo
+** DONE redo the home page
+*** DONE Add links to each section
+*** DONE Write descriptions of what each page is up to
 **** would be good if JavaScript could fill it in, so you don't need to copy it from the actual sections
-** TODO Add amphitrite and about me toolbar buttons
+*** DONE Move amphitrite stuff to a different page
+*** DONE Move down the about this website and community stuff
+** DONE Add amphitrite and about me toolbar buttons
+** TODO Amphitrite page
+*** DONE Find out how to collapse sections of text
+*** DONE Add weblinks for everything
+*** DONE [readme] Windows
+*** TODO [readme] Mac and linux setup
+**** DONE Create a blank ubuntu VM
+**** DONE Check if you need to add amphitrite to path
+yes
+**** TODO Make sure the code tags work
+**** TODO Write up how to add to path
+*** TODO Maybe try recording a tutorial video
+** TODO About me page
+*** TODO Add links from other pages
+*** TODO Write about yourself...
+*** TODO Ask Kostas for the photo
+*** TODO Add the photo
+** TODO Bottom banner
+*** TODO Copy and edit the header banner
+*** TODO Add copyright symbol and put your name and email in the image
+*** TODO Add to the bottom of all the pages
 * To do list
 ** TODO Figure out how to use forms
 + Pressing enter submits the data which is great
