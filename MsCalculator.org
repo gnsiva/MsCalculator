@@ -1,3 +1,10 @@
+* Updated version with amphitrite subdomain/part
+** TODO branch the git repo
+** TODO redo the home page
+*** TODO Add links to each section and calculation
+*** TODO Write descriptions of what each page is up to
+**** would be good if JavaScript could fill it in, so you don't need to copy it from the actual sections
+** TODO Add amphitrite and about me toolbar buttons
 * To do list
 ** TODO Figure out how to use forms
 + Pressing enter submits the data which is great
