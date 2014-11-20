@@ -31,8 +31,13 @@ yes
 ** TODO Figure out how to use forms
 + Pressing enter submits the data which is great
 + But it reloads the page, so the information is removed (inputs and answer)
-** TODO Drawing graphs with javascript
-* Features to add
+** DONE Drawing graphs with javascript
+** TODO Move download links to Google Drive
+** TODO Sort out a bottom banner
+** TODO About me - Image to show off
+** TODO About me - Write part about me
+** TODO About me - add github link somewhere
+* Features/calculations to add
 ** MS calculations
 *** TODO Calculate masses from peak m/z values
 *** TODO Table of m/z values for theoretical charge states

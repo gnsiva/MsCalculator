@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="141120_bottom_banner.svg"
+   inkscape:export-filename="/home/gns/MsCalculator/BannerStuff/141120_bottom_banner.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4">
+    <clipPath
+       id="p3fd614a4b8">
+      <rect
+         height="371.88"
+         width="518.01672"
+         x="30.559999"
+         y="12.96"
+         id="rect3978" />
+    </clipPath>
+    <filter
+       inkscape:collect="always"
+       id="filter4843">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.43781256"
+         id="feGaussianBlur4845" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="343.40304"
+     inkscape:cy="790.30575"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="2503"
+     inkscape:window-height="1416"
+     inkscape:window-x="57"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#0024d0"
+       id="rect2985"
+       width="511.13718"
+       height="20.386309"
+       x="115.15739"
+       y="175.54977"
+       inkscape:export-filename="/home/gns/MsCalculator/bottom_banner.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+  <g
+     transform="matrix(2.0061815,0,0,0.33635694,-126.8089,200.95464)"
+     id="line2d_4"
+     style="opacity:0.36213995;fill:#f8fcfc;filter:url(#filter4843)"
+     inkscape:export-filename="/home/gns/MsCalculator/bottom_banner.png"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300">
+    <path
+       inkscape:connector-curvature="0"
+       clip-path="url(#p3fd614a4b8)"
+       d="m 59.3406,206.478 103.8354,-0.111 2.331,-0.35 1.909,0.346 2.618,0.084 4.818,-0.046 0.468,-0.207 0.351,-0.418 0.293,-0.687 0.346,-1.441 0.403,-2.874 0.52,-5.71 0.927,-10.457 0.29,-1.103 0.116,0.042 0.174,0.751 0.291,2.673 0.991,10.174 0.525,3.031 0.527,1.867 0.582,1.28 0.634,0.871 0.751,0.643 0.928,0.484 1.221,0.37 1.811,0.293 2.894,0.216 1.396,-0.037 0.408,-0.216 0.292,-0.379 0.292,-0.733 0.351,-1.642 0.352,-2.845 0.467,-6.037 1.271,-18.565 0.174,-0.555 0.057,-0.001 0.116,0.376 0.231,2.128 0.638,9.704 0.58,6.964 0.523,3.851 0.524,2.385 0.583,1.657 0.643,1.145 0.703,0.795 0.816,0.591 1.039,0.465 0.983,0.211 0.638,-0.08 0.639,-0.323 0.815,-0.416 0.408,0.031 0.467,0.313 0.878,0.583 0.879,0.287 1.443,0.208 2.959,0.161 0.992,-0.076 0.409,-0.249 0.351,-0.536 0.351,-1.073 0.352,-1.835 0.527,-4.215 0.75,-6.088 0.289,-0.91 0.115,-0.005 0.173,0.509 0.289,1.925 0.926,6.704 0.522,2.045 0.523,1.22 0.581,0.821 0.699,0.59 0.876,0.43 1.229,0.331 1.864,0.246 0.982,-0.02 0.347,-0.211 0.29,-0.489 0.29,-1.094 0.29,-2.196 0.29,-3.981 0.348,-8.157 0.465,-17.6 1.049,-44.121 0.233,-2.485 0.059,0.112 0.116,1.411 0.234,6.846 1.229,45.008 0.528,9.092 0.528,5.442 0.582,3.677 0.576,2.31 0.635,1.675 0.694,1.218 0.753,0.894 0.871,0.702 1.105,0.591 1.401,0.475 0.995,0.155 0.351,-0.141 0.235,-0.309 0.235,-0.666 0.235,-1.3 0.293,-3.149 0.293,-5.84 0.347,-12.055 0.403,-22.609 1.271,-80.8355 0.115,-1.1758 0.058,0.1166 0.116,2.0912 0.231,10.577 1.276,73.7815 0.523,13.9 0.524,8.385 0.582,5.756 0.583,3.661 0.643,2.651 0.702,1.929 0.762,1.416 0.822,1.052 0.933,0.83 1.096,0.67 1.33,0.551 1.74,0.469 0.989,0.098 0.35,-0.145 0.291,-0.361 0.292,-0.783 0.292,-1.473 0.351,-3.102 0.409,-5.849 1.231,-19.74 0.176,-0.352 0.117,0.471 0.235,2.627 1.348,19.276 0.52,3.29 0.519,2.004 0.577,1.397 0.636,0.975 0.753,0.735 0.87,0.54 1.163,0.448 1.632,0.368 2.46,0.3 4.014,0.239 7.4,0.187 15.681,0.136 2.252,-0.092 0.869,-0.334 0.58,-0.11 0.522,0.171 0.872,0.238 1.457,0.106 5.217,0.055 2.445,-0.098 0.346,-0.272 0.289,-0.554 0.289,-1.044 0.404,-2.433 0.694,-4.431 0.232,-0.364 0.116,0.204 0.231,1.146 0.812,4.555 0.465,1.249 0.523,0.751 0.581,0.451 0.815,0.33 1.225,0.232 2.224,0.162 4.522,0.078 0.521,-0.135 0.346,-0.343 0.288,-0.619 0.346,-1.297 0.982,-4.228 0.116,-0.035 0.173,0.335 0.405,1.829 0.521,2.005 0.464,0.967 0.522,0.581 0.639,0.371 0.93,0.264 1.572,0.184 3.334,0.122 10.031,0.069 56.732,0.04 102.735,0.011 0,0"
+       style="opacity:0.80658438;fill:#f8fcfc;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3529"
+       transform="matrix(0.95510374,0,0,0.43849851,12.949885,-105.20516)" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.80246911;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:0.09132421;font-family:Latin Modern Mono Caps;-inkscape-font-specification:Latin Modern Mono Caps"
+     x="139.92644"
+     y="38.450775"
+     id="text4791"
+     sodipodi:linespacing="125%"
+     inkscape:export-xdpi="200"
+     inkscape:export-ydpi="200"><tspan
+       sodipodi:role="line"
+       id="tspan4793"
+       x="139.92644"
+       y="38.450775"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:1;font-family:Latin Modern Mono Caps;-inkscape-font-specification:Latin Modern Mono Caps">Native Mass Spectrometry Calculator</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:49.08065033px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.80658438;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+     x="190.54594"
+     y="400.01697"
+     id="text2999"
+     sodipodi:linespacing="125%"
+     transform="scale(0.81872416,1.2214126)"
+     inkscape:export-filename="/home/gns/Dropbox/SideProjects/nativeMsCalculator/banner.png"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300"><tspan
+       sodipodi:role="line"
+       id="tspan3001"
+       x="190.54594"
+       y="400.01697"
+       style="font-size:29.44838905px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Latin Modern Mono Caps;-inkscape-font-specification:Latin Modern Mono Caps">Native Mass Spectrometry Calculator</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+     x="118.18783"
+     y="188.70207"
+     id="text2995"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/gns/MsCalculator/bottom_banner.png"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300"><tspan
+       sodipodi:role="line"
+       id="tspan2997"
+       x="118.18783"
+       y="188.70207"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono">g.n.sivalingam@gmail.com</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+     x="478.478"
+     y="188.47708"
+     id="text2995-1"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/gns/MsCalculator/bottom_banner.png"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300"><tspan
+       sodipodi:role="line"
+       id="tspan2997-7"
+       x="478.478"
+       y="188.47708"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono">http://github.com/gnsiva</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+     x="300.1658"
+     y="188.92125"
+     id="text2995-9"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/gns/MsCalculator/bottom_banner.png"
+     inkscape:export-xdpi="300"
+     inkscape:export-ydpi="300"><tspan
+       sodipodi:role="line"
+       id="tspan2997-2"
+       x="300.1658"
+       y="188.92125"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"><tspan
+         style="font-size:14px"
+         id="tspan3029">©</tspan><tspan
+         style="font-size:10px"
+         id="tspan3046"> 2014 Ganesh N. Sivalingam</tspan></tspan></text>
+</svg>
